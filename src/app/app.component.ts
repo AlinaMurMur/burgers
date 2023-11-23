@@ -40,17 +40,17 @@ export class AppComponent {
   confirmOrder() {
     if (this.form.valid) {
       this.appService.sendOrder(this.form.value)
-        .subscribe(
-          {
-            next: (response: any) => {
-              alert(response.message);
-              this.form.reset();
-            },
-            error: (response) => {
-              alert(response.error.message);
-            },
-          }
-        );
+          .subscribe(
+              {
+                next: (response: any) => {
+                  alert(response.message);
+                  this.form.reset();
+                },
+                error: (response) => {
+                  alert(response.error.message);
+                },
+              }
+          );
     }
   }
 
